@@ -31,9 +31,6 @@ It is designed for commercial-grade apps, websites, mini programs, SaaS products
   scripts/
     check-public-safety.sh
     sync-local-skill.sh
-  .github/workflows/
-    ci.yml
-    daily-auto-merge.yml
 ```
 
 ## Installation
@@ -95,13 +92,12 @@ The check blocks common sensitive terms, local paths, private project names, pri
 
 ## Automation
 
-This repository includes:
+This repository includes local automation helpers:
 
-- `ci.yml`: runs public safety checks on pushes and pull requests.
-- `daily-auto-merge.yml`: daily safe auto-merge for low-risk PRs that pass checks and stay within allowed paths.
+- `scripts/check-public-safety.sh`: public safety and secret-like content scan.
 - `scripts/sync-local-skill.sh`: local-only sync helper for copying the checked main branch into a local skills directory.
 
-GitHub Actions should not directly access your local machine. Use a local scheduler or agent automation to run `scripts/sync-local-skill.sh` after main has been checked and merged.
+GitHub Actions should not directly access your local machine. Use a local scheduler or agent automation to check pull requests, merge only safe changes, and run `scripts/sync-local-skill.sh` after main has been checked and merged.
 
 ## License
 

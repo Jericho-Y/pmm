@@ -1,10 +1,10 @@
 # Automation
 
-## GitHub Actions
+## Daily Repository Check
 
-`ci.yml` runs public safety checks on pushes and pull requests.
+Use a local scheduler, Codex automation, or GitHub Actions to run a daily repository check.
 
-`daily-auto-merge.yml` runs daily and tries to merge low-risk pull requests only when:
+The safe auto-merge policy should merge low-risk pull requests only when:
 
 - the pull request is not a draft
 - checks pass
