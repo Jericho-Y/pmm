@@ -3,7 +3,7 @@ name: pmm
 description: Use when starting, structuring, continuing, or taking over a commercial software project, app, website, mini program, SaaS, desktop tool, or large feature that needs durable requirements, project memory, autonomous execution, verification, and safety controls.
 ---
 
-# PMM: Project Memory Manager
+# Project Memory Manager
 
 Purpose: Define the durable requirements, project memory, recovery, verification, and safety protocol for commercial-grade projects.
 Read when: Starting, structuring, continuing, recovering, or maintaining a long-lived software project or this skill.

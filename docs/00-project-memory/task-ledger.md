@@ -23,7 +23,7 @@ Skip when: Performing a read-only lookup that will not change state.
 - Last error or interruption: none
 - Verification status: public safety check passed; file-purpose header scan passed; recovery status helper detected active task before completion and no active task after completion; local skill sync scope updated to include recovery docs and helper.
 
-## 2026-05-13 PMM Rename
+## 2026-05-13 Skill Rename
 
 - Status: completed
 - Objective: rename the skill, repository references, local sync path, and public documentation from the long descriptive name to `pmm`.
@@ -33,3 +33,14 @@ Skip when: Performing a read-only lookup that will not change state.
 - Retry count: 0
 - Last error or interruption: `skill-creator` registered path was unavailable locally, so repository-local maintenance rules were used.
 - Verification status: public safety check passed; old-name scan passed except the intentional blocked-pattern entry inside `scripts/check-public-safety.sh`; GitHub repository and local `origin` point to `pmm`; local skill installation now exists at `<SKILLS_ROOT>/pmm`.
+
+## 2026-05-13 Display Name Cleanup
+
+- Status: completed
+- Objective: keep the `pmm` call name and repository slug, but remove the acronym prefix from the public display name.
+- Selected docs: `AGENTS.md`, `SKILL.md`, `README.md`, `docs/00-project-memory/current-state.md`, `docs/07-decisions/change-log.md`
+- Current checkpoint: headings and display-name references changed to `Project Memory Manager`.
+- Next concrete action: publish the local commits when ready.
+- Retry count: 0
+- Last error or interruption: none.
+- Verification status: public safety check passed; local skill installation synced; GitHub repository description updated.

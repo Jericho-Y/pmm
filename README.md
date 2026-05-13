@@ -1,4 +1,4 @@
-# PMM: Project Memory Manager
+# Project Memory Manager
 
 Purpose: Public overview, installation guide, safety model, and repository map for the skill.
 Read when: Evaluating, installing, publishing, or onboarding to this skill repository.

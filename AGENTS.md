@@ -1,4 +1,4 @@
-# PMM: Project Memory Manager
+# Project Memory Manager
 
 Purpose: Project entrypoint and highest-priority maintenance instructions for this repository.
 Read when: Opening this repository, changing the skill, updating automation, or recovering interrupted work.
