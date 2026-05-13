@@ -4,7 +4,7 @@ Purpose: Reusable skeletons for creating project memory, requirements, recovery,
 Read when: Bootstrapping a new project or updating the required document structure.
 Skip when: Maintaining only this repository's scripts or release settings.
 
-Use these skeletons when creating a new project requirements system. Replace placeholders with project-specific content. Keep unknowns explicit; do not invent secrets, credentials, production paths, or confirmed business decisions.
+Use these skeletons when creating project memory documents. Replace placeholders with project-specific content. Keep unknowns explicit; do not invent secrets, credentials, production paths, or confirmed business decisions.
 
 ## AGENTS.md
 

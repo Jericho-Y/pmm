@@ -1,4 +1,4 @@
-# Project Requirements System
+# PMM: Project Memory Manager
 
 Purpose: Project entrypoint and highest-priority maintenance instructions for this repository.
 Read when: Opening this repository, changing the skill, updating automation, or recovering interrupted work.
@@ -6,7 +6,7 @@ Skip when: Never skip during repository work.
 
 ## Project Role
 
-This repository publishes the `project-requirements-system` Codex skill. Its job is to help agents create durable project requirements, project memory, verification rules, recovery checkpoints, and safety boundaries for commercial-grade software projects.
+This repository publishes the `pmm` Codex skill. Its job is to help agents create durable project requirements, project memory, verification rules, recovery checkpoints, and safety boundaries for commercial-grade software projects.
 
 ## Current Phase
 

@@ -10,11 +10,14 @@ The public repository is initialized and published as a generic Codex skill repo
 
 ## Active Objective
 
-Maintain a safe public version of the `project-requirements-system` skill and keep local installations synchronized only after safety checks pass.
+Maintain a safe public version of the `pmm` skill and keep local installations synchronized only after safety checks pass.
 
 ## Current Facts
 
 - Public safety checks are enforced through `scripts/check-public-safety.sh`.
+- The skill's public call name is `pmm`, displayed as `PMM: Project Memory Manager`.
+- Public repository examples use the repository slug `pmm` with an owner placeholder.
+- Local skill installation uses `<SKILLS_ROOT>/pmm`.
 - Local skill sync is handled by `scripts/sync-local-skill.sh`.
 - Local sync temporary files and backups default to `.project-runtime/` inside the repository.
 - `scripts/recovery-status.sh` identifies active or retryable task ledger entries for recovery automation.

@@ -1,13 +1,13 @@
 # Project Instructions
 
 Purpose: Example project entrypoint showing how future project AGENTS.md files should guide agents.
-Read when: Learning or testing the project requirements system with the generic example.
+Read when: Learning or testing PMM with the generic example.
 Skip when: Working on a real project or repository code outside this example.
 
 ## Project Identity
 
 - Name: generic-app
-- One-sentence positioning: A placeholder commercial app used to demonstrate the project requirements system.
+- One-sentence positioning: A placeholder commercial app used to demonstrate PMM project memory.
 - Project type: Example application
 - Current phase: Requirements setup
 - Current top objective: Keep project memory, execution state, and verification records aligned.

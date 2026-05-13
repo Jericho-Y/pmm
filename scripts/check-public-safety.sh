@@ -45,8 +45,8 @@ forbidden_patterns=(
 )
 
 for pattern in "${forbidden_patterns[@]}"; do
-  if rg -n --hidden --glob '!scripts/check-public-safety.sh' --glob '!.git/**' --glob '!.project-runtime/**' "$pattern" . >/tmp/project-requirements-system-scan.txt; then
-    cat /tmp/project-requirements-system-scan.txt >&2
+  if rg -n --hidden --glob '!scripts/check-public-safety.sh' --glob '!.git/**' --glob '!.project-runtime/**' "$pattern" . >/tmp/pmm-scan.txt; then
+    cat /tmp/pmm-scan.txt >&2
     fail "forbidden private marker found: $pattern"
   fi
 done
@@ -64,8 +64,8 @@ secret_patterns=(
 )
 
 for pattern in "${secret_patterns[@]}"; do
-  if rg -n --hidden --glob '!.git/**' --glob '!.project-runtime/**' -e "$pattern" . >/tmp/project-requirements-system-secret-scan.txt; then
-    cat /tmp/project-requirements-system-secret-scan.txt >&2
+  if rg -n --hidden --glob '!.git/**' --glob '!.project-runtime/**' -e "$pattern" . >/tmp/pmm-secret-scan.txt; then
+    cat /tmp/pmm-secret-scan.txt >&2
     fail "secret-like content found"
   fi
 done

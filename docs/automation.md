@@ -44,8 +44,8 @@ By default, temporary sync files and local backups are placed under `.project-ru
 Set these environment variables if needed:
 
 ```bash
-REPO_URL=https://github.com/<owner>/project-requirements-system.git
-LOCAL_SKILL_DIR=<SKILLS_ROOT>/project-requirements-system
+REPO_URL=https://github.com/<owner>/pmm.git
+LOCAL_SKILL_DIR=<SKILLS_ROOT>/pmm
 ```
 
 ## Compact Disconnect Recovery

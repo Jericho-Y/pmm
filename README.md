@@ -1,4 +1,4 @@
-# Project Requirements System
+# PMM: Project Memory Manager
 
 Purpose: Public overview, installation guide, safety model, and repository map for the skill.
 Read when: Evaluating, installing, publishing, or onboarding to this skill repository.
@@ -50,7 +50,7 @@ It is designed for commercial-grade apps, websites, mini programs, SaaS products
 Copy this repository into your local skills directory, or copy only `SKILL.md` and `templates/` into your agent's skill folder:
 
 ```text
-<SKILLS_ROOT>/project-requirements-system/
+<SKILLS_ROOT>/pmm/
   SKILL.md
   templates/
 ```

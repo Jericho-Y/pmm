@@ -1,9 +1,9 @@
 ---
-name: project-requirements-system
+name: pmm
 description: Use when starting, structuring, continuing, or taking over a commercial software project, app, website, mini program, SaaS, desktop tool, or large feature that needs durable requirements, project memory, autonomous execution, verification, and safety controls.
 ---
 
-# Project Requirements System
+# PMM: Project Memory Manager
 
 Purpose: Define the durable requirements, project memory, recovery, verification, and safety protocol for commercial-grade projects.
 Read when: Starting, structuring, continuing, recovering, or maintaining a long-lived software project or this skill.
@@ -60,7 +60,7 @@ If any layer is missing in an existing project, retrofit the missing layer befor
 This skill is the project-level controller. It should not replace specialized execution skills. Use this priority:
 
 ```text
-Workspace/project instructions -> project-requirements-system -> specialized task skills -> tool-specific docs
+Workspace/project instructions -> pmm -> specialized task skills -> tool-specific docs
 ```
 
 When another skill applies, run the project memory protocol first, then use the specialized skill, then update the project documents.
@@ -236,7 +236,7 @@ For every new project or substantial new task:
 - Create or update an active task entry in `docs/00-project-memory/task-ledger.md`.
 - Record the current checkpoint, next action, retry count, and verification requirement before long-running work.
 - If this is an existing project, read existing docs before changing the memory entry.
-- If this is an existing project without the full requirements system, add missing memory/recovery/verification/safety docs first, then continue the requested task.
+- If this is an existing project without the full project memory document set, add missing memory/recovery/verification/safety docs first, then continue the requested task.
 - If the task changes after execution begins, update `AGENTS.md` and `current-state.md` so future agents do not follow stale instructions.
 - Do not leave project memory behind the actual project state.
 
@@ -261,7 +261,7 @@ If a relevant document is missing or stale, update it before relying on it.
 ## Autonomous Execution Rules
 
 Agents should directly handle:
-- Creating the project structure and requirements system.
+- Creating the project structure and project memory documents.
 - Turning rough ideas into commercial requirements, assumptions, and open questions.
 - Designing product flows, technical architecture, task breakdown, and validation plans.
 - Implementing features, fixing bugs, adding tests, running checks, and iterating until usable.

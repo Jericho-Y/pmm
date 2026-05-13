@@ -7,7 +7,7 @@ Skip when: Performing a read-only lookup that will not change state.
 ## 2026-05-13 Public Repository Setup
 
 - Status: completed
-- Objective: publish a sanitized public repository for the `project-requirements-system` skill.
+- Objective: publish a sanitized public repository for the `pmm` skill.
 - Selected docs: `SKILL.md`, `README.md`, `docs/automation.md`, `SECURITY.md`
 - Verification: public safety check passed; repository published as public; local skill sync completed.
 - Recovery checkpoint: use `git status`, run `bash scripts/check-public-safety.sh`, then inspect the public repository settings before continuing maintenance.
@@ -22,3 +22,14 @@ Skip when: Performing a read-only lookup that will not change state.
 - Retry count: 0
 - Last error or interruption: none
 - Verification status: public safety check passed; file-purpose header scan passed; recovery status helper detected active task before completion and no active task after completion; local skill sync scope updated to include recovery docs and helper.
+
+## 2026-05-13 PMM Rename
+
+- Status: completed
+- Objective: rename the skill, repository references, local sync path, and public documentation from the long descriptive name to `pmm`.
+- Selected docs: `AGENTS.md`, `SKILL.md`, `README.md`, `docs/automation.md`, `docs/00-project-memory/current-state.md`, `docs/00-project-memory/recovery-rules.md`, `docs/07-decisions/change-log.md`
+- Current checkpoint: repository text, sync script defaults, safety check temporary names, GitHub repository name, Git remote, and local skill installation have been updated to `pmm`.
+- Next concrete action: publish the local commits when ready.
+- Retry count: 0
+- Last error or interruption: `skill-creator` registered path was unavailable locally, so repository-local maintenance rules were used.
+- Verification status: public safety check passed; old-name scan passed except the intentional blocked-pattern entry inside `scripts/check-public-safety.sh`; GitHub repository and local `origin` point to `pmm`; local skill installation now exists at `<SKILLS_ROOT>/pmm`.

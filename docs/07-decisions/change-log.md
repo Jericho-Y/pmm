@@ -14,3 +14,4 @@ Skip when: You only need current instructions and no historical context.
 - Added remote compact stream disconnect recovery rules and recovery automation prompt.
 - Added file-purpose header requirements so future agents can skip irrelevant files faster.
 - Expanded local skill sync to include compact recovery automation docs and `scripts/recovery-status.sh`.
+- Renamed the public skill call name and repository references to `pmm`, displayed as `PMM: Project Memory Manager`.

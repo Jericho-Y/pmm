@@ -4,8 +4,8 @@
 # Skip when: Working only on public documentation or templates.
 set -euo pipefail
 
-REPO_URL="${REPO_URL:-https://github.com/<owner>/project-requirements-system.git}"
-LOCAL_SKILL_DIR="${LOCAL_SKILL_DIR:-$HOME/.codex/skills/project-requirements-system}"
+REPO_URL="${REPO_URL:-https://github.com/<owner>/pmm.git}"
+LOCAL_SKILL_DIR="${LOCAL_SKILL_DIR:-$HOME/.codex/skills/pmm}"
 repo_root="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PROJECT_RUNTIME_DIR="${PROJECT_RUNTIME_DIR:-$repo_root/.project-runtime}"
 TMP_ROOT="$PROJECT_RUNTIME_DIR/sync"
@@ -43,7 +43,7 @@ if find . -type f \( -name '*.sh' -o -name '*.py' -o -name '*.js' -o -name '*.ts
 fi
 
 if [[ -d "$LOCAL_SKILL_DIR" ]]; then
-  cp -R "$LOCAL_SKILL_DIR" "$BACKUP_ROOT/project-requirements-system-$STAMP"
+  cp -R "$LOCAL_SKILL_DIR" "$BACKUP_ROOT/pmm-$STAMP"
 fi
 
 mkdir -p "$LOCAL_SKILL_DIR"
@@ -63,4 +63,4 @@ rsync -a --delete \
 [[ -f "$LOCAL_SKILL_DIR/templates/document-skeletons.md" ]] || fail "local sync did not produce document skeleton template"
 [[ -f "$LOCAL_SKILL_DIR/scripts/recovery-status.sh" ]] || fail "local sync did not produce recovery helper"
 
-printf 'Synced project-requirements-system to %s\n' "$LOCAL_SKILL_DIR"
+printf 'Synced pmm to %s\n' "$LOCAL_SKILL_DIR"
