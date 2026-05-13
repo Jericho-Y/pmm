@@ -4,6 +4,17 @@ Purpose: Task checkpoint and recovery ledger for repository maintenance work.
 Read when: Starting, resuming, or recovering any non-trivial task in this repository.
 Skip when: Performing a read-only lookup that will not change state.
 
+## 2026-05-14 Chinese README Default
+
+- Status: completed
+- Objective: make the repository overview default to Chinese while preserving English documentation and language switching.
+- Selected docs: `AGENTS.md`, `README.md`, `docs/00-project-memory/current-state.md`, `docs/00-project-memory/task-ledger.md`, `docs/07-decisions/change-log.md`, `scripts/check-public-safety.sh`
+- Current checkpoint: `README.md` is now the Simplified Chinese default, `README.en.md` preserves the English mirror, and both files link to each other.
+- Next concrete action: keep both README files synchronized when public overview content changes.
+- Retry count: 0
+- Last error or interruption: none.
+- Verification status: passed public safety check, shell syntax check, `git diff --check`, and README language switch assertions.
+
 ## 2026-05-14 Agent Compatibility Review
 
 - Status: completed

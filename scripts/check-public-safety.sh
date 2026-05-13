@@ -23,6 +23,7 @@ fi
 required_files=(
   "SKILL.md"
   "README.md"
+  "README.en.md"
   "SECURITY.md"
   "docs/agent-compatibility.md"
   "templates/document-skeletons.md"

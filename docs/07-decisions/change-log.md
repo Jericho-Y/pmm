@@ -6,6 +6,7 @@ Skip when: You only need current instructions and no historical context.
 
 ## 2026-05-14
 
+- Changed the default repository overview to Simplified Chinese in `README.md`, added `README.en.md`, and added language switch links between the two files.
 - Added cross-agent compatibility guidance for Claude Code, Hermes, OpenCode/OpenClaw-style agents, and other AGENTS.md-aware coding agents.
 - Added the Agent Skills `compatibility` frontmatter to `SKILL.md` and documented that generated `AGENTS.md` plus project-local `docs/` are the portable project memory output.
 - Updated the project document skeleton with optional Claude Code, Hermes, and OpenCode/OpenClaw compatibility shims.

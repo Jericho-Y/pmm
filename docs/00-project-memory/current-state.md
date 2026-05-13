@@ -17,6 +17,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 - Public safety checks are enforced through `scripts/check-public-safety.sh`.
 - The skill's public call name is `pmm`, displayed as `Project Memory Manager`.
 - Public repository examples use the repository slug `pmm` with an owner placeholder.
+- `README.md` is the default Simplified Chinese repository overview; `README.en.md` is the English mirror and both files link to each other for language switching.
 - Local skill installation uses `<SKILLS_ROOT>/pmm`.
 - Local skill sync is handled by `scripts/sync-local-skill.sh`.
 - Local sync temporary files and backups default to `.project-runtime/` inside the repository.

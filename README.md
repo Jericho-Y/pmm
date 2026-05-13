@@ -1,30 +1,33 @@
-# Project Memory Manager
+# Project Memory Manager（项目记忆管理器）
 
-Purpose: Public overview, installation guide, safety model, and repository map for the skill.
-Read when: Evaluating, installing, publishing, or onboarding to this skill repository.
-Skip when: You already know the repository shape and need a specific implementation file.
+语言：简体中文 | [English](README.en.md)
 
-A Codex skill for starting and continuing long-lived software projects with durable requirements, project memory, verification, recovery checkpoints, and safety controls.
+Purpose: 本仓库的公开说明、安装指南、安全模型和目录地图。
+Read when: 评估、安装、发布或首次了解这个 skill 仓库时阅读。
+Skip when: 已经熟悉仓库结构，只需要查看某个具体实现文件。
 
-It is designed for commercial-grade apps, websites, mini programs, SaaS products, desktop tools, AI products, and substantial feature work. It is not intended for one-off shell commands or throwaway demos.
+`pmm` 是一个用于启动和持续维护长期软件项目的 Agent Skill。它帮助 Agent 建立持久化需求、项目记忆、验证规则、恢复检查点和安全边界，避免项目只依赖临时聊天上下文。
 
-## What It Does
+它适用于商业级 app、网站、小程序、SaaS、桌面工具、AI 产品和较大的功能链路。不适合一次性命令、极小改动或临时 demo。
 
-- Creates a project-level `AGENTS.md` as the first memory entrypoint.
-- Builds a structured `docs/` tree for business, product, design, technical, delivery, operations, and decision records.
-- Defines which documents an agent should read for each task type.
-- Tracks active work in `docs/00-project-memory/task-ledger.md`.
-- Supports interrupted-work recovery with checkpoints and retry limits.
-- Provides a compact-disconnect recovery procedure for stream interruption failures.
-- Requires short file-purpose headers so agents can skip irrelevant files quickly.
-- Requires verification before completion claims.
-- Keeps high-risk actions behind project-owner confirmation.
+## 核心能力
 
-## Repository Contents
+- 创建项目级 `AGENTS.md`，作为所有 Agent 进入项目后的第一记忆入口。
+- 建立结构化 `docs/` 文档树，覆盖业务、产品、设计、技术、交付、运营和决策记录。
+- 定义不同任务类型应该读取哪些文档。
+- 使用 `docs/00-project-memory/task-ledger.md` 跟踪当前任务和恢复检查点。
+- 支持中断恢复、重试边界和 compact/stream 断连后的续跑。
+- 要求每个项目文档保留简短的 Purpose / Read when / Skip when 说明，降低未来 Agent 误读成本。
+- 要求完成前进行验证，不能只凭主观判断宣称完成。
+- 将生产、支付、权限、凭据、发布等高风险动作保留给项目负责人确认。
+
+## 仓库内容
 
 ```text
 .
   SKILL.md
+  README.md
+  README.en.md
   templates/
     document-skeletons.md
     server-inventory.example.md
@@ -47,9 +50,9 @@ It is designed for commercial-grade apps, websites, mini programs, SaaS products
     sync-local-skill.sh
 ```
 
-## Installation
+## 安装
 
-Copy this repository into your local skills directory, or copy the core skill files into your agent's skill folder:
+可以把整个仓库复制到本地 skills 目录，也可以只复制核心 skill 文件到目标 Agent 的 skill 目录：
 
 ```text
 <SKILLS_ROOT>/pmm/
@@ -59,34 +62,34 @@ Copy this repository into your local skills directory, or copy the core skill fi
     agent-compatibility.md
 ```
 
-Then reference the skill when starting, structuring, continuing, or recovering a project.
+之后在启动、规划、接手、恢复或维护长期项目时引用 `pmm`。
 
-## Agent Compatibility
+## Agent 兼容性
 
-`pmm` uses the Agent Skills `SKILL.md` format, but its generated project memory is intentionally agent-neutral: the canonical project output is root `AGENTS.md` plus project-local `docs/`.
+`pmm` 使用 Agent Skills 的 `SKILL.md` 格式，但它生成的项目记忆是 Agent 中立的：真正稳定的项目入口是项目根目录的 `AGENTS.md` 加项目内 `docs/`。
 
-- Codex and other Agent Skills clients can install `pmm/SKILL.md` directly.
-- Claude Code can install it under a Claude skills directory and use a short `CLAUDE.md` shim that points back to `AGENTS.md`.
-- Hermes can install it as a `SKILL.md` skill and cite project memory files in handoffs.
-- OpenCode/OpenClaw-style agents can use the generated `AGENTS.md` directly even when they do not load the skill package.
+- Codex 和其他 Agent Skills 客户端可以直接安装 `pmm/SKILL.md`。
+- Claude Code 可以安装到 Claude skills 目录，并用一个很短的 `CLAUDE.md` shim 指向 `AGENTS.md`。
+- Hermes 可以作为 `SKILL.md` skill 安装，并在 handoff 任务里引用项目记忆文件。
+- OpenCode / OpenClaw 风格 Agent 即使不加载 skill 包，也可以直接读取生成后的 `AGENTS.md`。
 
-See `docs/agent-compatibility.md` for the full compatibility map and shim examples.
+完整兼容矩阵和 shim 示例见 `docs/agent-compatibility.md`。
 
-## Basic Workflow
+## 基本流程
 
-1. Start a new project or identify an existing project.
-2. Create or update project root `AGENTS.md`.
-3. Create the requirements document tree under `docs/`.
-4. Record the active task in `docs/00-project-memory/task-ledger.md`.
-5. Read only the task-specific source documents.
-6. Execute, verify, retry if safe, and update project memory.
-7. Record decisions, risks, and changes in `docs/07-decisions/`.
+1. 启动新项目，或识别一个已有项目。
+2. 创建或更新项目根目录 `AGENTS.md`。
+3. 在 `docs/` 下创建需求、技术、交付、运营和决策文档树。
+4. 在 `docs/00-project-memory/task-ledger.md` 记录当前任务。
+5. 只读取当前任务需要的源文档，不默认扫描整棵文档树。
+6. 执行、验证、安全重试，并更新项目记忆。
+7. 在 `docs/07-decisions/` 记录决策、风险和变更。
 
-## Safety Model
+## 安全模型
 
-Never commit real secrets, production credentials, private server inventories, customer data, payment keys, deployment tokens, private chat logs, or local machine paths.
+不要提交真实 secrets、生产凭据、私有服务器 inventory、客户数据、支付密钥、部署 token、私密聊天日志或能识别个人工作环境的本机路径。
 
-Use placeholders such as:
+公共文档中使用占位符：
 
 - `<PROJECTS_ROOT>`
 - `<SKILLS_ROOT>`
@@ -94,37 +97,37 @@ Use placeholders such as:
 - `<production-domain>`
 - `<credential-reference>`
 
-High-risk actions require explicit project-owner confirmation:
+以下高风险动作必须由项目负责人确认：
 
-- real payment, refund, billing, or transaction actions
-- production data deletion or migration
-- credential, permission, user, order, or billing configuration changes
-- external publication, messaging, app store submission, or customer-visible actions
+- 真实支付、退款、计费或交易动作
+- 生产数据删除或迁移
+- 凭据、权限、用户、订单或账单配置变更
+- 外部发布、消息发送、应用商店提交或其他用户可见动作
 
-## Optional Execution Integrations
+## 可选执行集成
 
-This skill can coordinate with specialized execution workflows such as planning, TDD, systematic debugging, completion verification, deployment, security review, and subagent-based execution.
+`pmm` 可以协调规划、TDD、系统化调试、完成前验证、部署、安全审查和子代理并行执行等专用工作流。
 
-The project memory protocol stays in charge: specialized workflows may add checks, but they should not weaken project memory, verification, recovery, or security requirements.
+项目记忆协议始终是上层控制器：专用执行工作流可以增加检查，但不能弱化项目记忆、验证、恢复或安全要求。
 
-## Checks
+## 检查
 
-Run the public safety check before publishing:
+发布前运行公开安全检查：
 
 ```bash
 bash scripts/check-public-safety.sh
 ```
 
-The check blocks common sensitive terms, local paths, private project names, private domains, executable payloads, and accidental secret-like content.
+该检查会拦截常见敏感词、本机路径、私有项目名、私有域名、可执行载荷和疑似 secret 内容。
 
-## Automation
+## 自动化
 
-This repository includes local automation helpers:
+仓库包含本地自动化辅助脚本：
 
-- `scripts/check-public-safety.sh`: public safety and secret-like content scan.
-- `scripts/sync-local-skill.sh`: local-only sync helper for copying the checked main branch into a local skills directory.
+- `scripts/check-public-safety.sh`：公开安全和疑似 secret 内容扫描。
+- `scripts/sync-local-skill.sh`：从已检查通过的 `main` 分支同步本地 skill 目录。
 
-GitHub Actions should not directly access your local machine. Use a local scheduler or agent automation to check pull requests, merge only safe changes, and run `scripts/sync-local-skill.sh` after main has been checked and merged.
+GitHub Actions 不应直接访问本机。使用本地 scheduler 或 Agent automation 检查 PR、只合并安全变更，并在 `main` 检查通过后运行 `scripts/sync-local-skill.sh`。
 
 ## License
 
