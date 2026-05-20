@@ -1,6 +1,7 @@
 ---
 name: pmm
 description: Use when starting, structuring, continuing, or taking over a commercial software project, app, website, mini program, SaaS, desktop tool, or large feature that needs durable requirements, project memory, autonomous execution, verification, and safety controls.
+version: 0.1.0
 compatibility: Agent Skills SKILL.md format; durable project output is AGENTS.md plus docs, usable by Codex, Claude Code, Hermes, OpenCode/OpenClaw-style agents, and other AGENTS.md-aware coding agents. No runtime dependencies.
 ---
 

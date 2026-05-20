@@ -15,6 +15,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 ## Current Facts
 
 - Public safety checks are enforced through `scripts/check-public-safety.sh`.
+- Public releases use `VERSION`, `SKILL.md` frontmatter `version:`, public `CHANGELOG.md`, matching git tags, and GitHub Releases.
 - The skill's public call name is `pmm`, displayed as `Project Memory Manager`.
 - Public repository examples use the repository slug `pmm` with an owner placeholder.
 - `README.md` is the default Simplified Chinese repository overview; `README.en.md` is the English mirror and both files link to each other for language switching.
@@ -30,7 +31,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 - Repository security review boundaries are documented under `docs/00-project-memory/security-rules.md`.
 - Context and token reduction rules are documented in `docs/context-budget.md`; `SKILL.md` stays under a 500-line safety budget and links to that guide for detail.
 - Public safety checks reject symlinks, committed `.env` files, blocked secret/key/archive/binary file types, and unexpected executable files outside reviewed scripts.
-- Public safety checks verify required bilingual README links and the context-budget guide reference.
+- Public safety checks verify required bilingual README links, the context-budget guide reference, and version consistency across `VERSION`, `SKILL.md`, and `CHANGELOG.md`.
 - Local skill sync validates broad path mistakes, rejects symlink sync paths, and requires the destination to be a dedicated `pmm` skill directory.
 - Local skill sync includes `docs/context-budget.md` so installed skills keep the token-reduction protocol.
 - Local skill sync removes unmanaged files inside the dedicated local `pmm` skill directory so stale local files do not survive a sync.
@@ -38,6 +39,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 - Cross-agent compatibility is documented in `docs/agent-compatibility.md`; `SKILL.md` is the Agent Skills entrypoint and generated `AGENTS.md` plus `docs/` is the portable project memory output.
 - `pmm` now keeps generated project instructions project-specific, gates PRD/requirements/source reviews on concrete source artifacts, and requires subagent role and ownership boundaries before spawning when subagent work is authorized.
 - The 2026-05-20 skill optimization release passed repository-wide security review, was pushed to public `main`, and was synced into the local `pmm` skill installation from public `main`.
+- `v0.1.0` is the first formal public release version for the current `pmm` skill behavior.
 
 ## Remaining Risks
 

@@ -2,6 +2,8 @@
 
 语言：简体中文 | [English](README.en.md)
 
+当前版本：`v0.1.0`，详见 [CHANGELOG.md](CHANGELOG.md)。
+
 Purpose: 本仓库的公开说明、安装指南、安全模型和目录地图。
 Read when: 评估、安装、发布或首次了解这个 skill 仓库时阅读。
 Skip when: 已经熟悉仓库结构，只需要查看某个具体实现文件。
@@ -29,6 +31,8 @@ Skip when: 已经熟悉仓库结构，只需要查看某个具体实现文件。
 ```text
 .
   SKILL.md
+  VERSION
+  CHANGELOG.md
   README.md
   README.en.md
   templates/
@@ -61,6 +65,8 @@ Skip when: 已经熟悉仓库结构，只需要查看某个具体实现文件。
 ```text
 <SKILLS_ROOT>/pmm/
   SKILL.md
+  VERSION
+  CHANGELOG.md
   templates/
   docs/
     agent-compatibility.md

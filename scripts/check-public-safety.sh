@@ -21,6 +21,8 @@ if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
 fi
 
 required_files=(
+  "VERSION"
+  "CHANGELOG.md"
   "SKILL.md"
   "README.md"
   "README.en.md"
@@ -36,7 +38,9 @@ done
 
 readme_checks=(
   "README.md:README.en.md"
+  "README.md:CHANGELOG.md"
   "README.en.md:README.md"
+  "README.en.md:CHANGELOG.md"
   "README.md:docs/context-budget.md"
   "README.en.md:docs/context-budget.md"
   "SKILL.md:docs/context-budget.md"
@@ -49,6 +53,11 @@ for check in "${readme_checks[@]}"; do
     fail "$file must reference $expected"
   fi
 done
+
+version="$(tr -d '[:space:]' < VERSION)"
+[[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]] || fail "VERSION must use semantic version format, for example 0.1.0"
+rg -q "^version: $version$" SKILL.md || fail "SKILL.md version must match VERSION"
+rg -q "^## v$version " CHANGELOG.md || fail "CHANGELOG.md must include an entry for v$version"
 
 skill_lines="$(wc -l < SKILL.md | tr -d '[:space:]')"
 if (( skill_lines > 500 )); then

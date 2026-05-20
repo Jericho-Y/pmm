@@ -20,6 +20,14 @@ Use this before publishing changes to this repository.
 - Confirm only intended files are staged.
 - Push to a branch and let CI run before merge.
 
+## Versioning
+
+- Update `VERSION` for every public behavior change.
+- Update the `version:` field in `SKILL.md` to match `VERSION`.
+- Add a public entry to `CHANGELOG.md` describing user-visible additions, changes, fixes, and security notes.
+- Create and push a matching git tag, for example `v0.1.0`.
+- Publish a GitHub Release from the matching tag when the version is intended as a formal public release.
+
 ## Automation
 
 - Do not auto-merge workflow or script changes from untrusted contributors.

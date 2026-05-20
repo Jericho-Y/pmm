@@ -28,6 +28,18 @@ Skip when: Performing a read-only lookup that will not change state.
 - Last error or interruption: none.
 - Verification status: passed repository-wide security scan, shell syntax check, public safety check, `git diff --check`, public repository visibility check, push to `main`, local skill sync from public `main`, local skill file diff checks, stale-file cleanup check, and final recovery-status check.
 
+## 2026-05-20 Formal Versioning and Release Notes
+
+- Status: active
+- Objective: add formal public version tracking and release notes so skill users can see which version they installed and what changed.
+- Selected docs: `AGENTS.md`, `SKILL.md`, `README.md`, `README.en.md`, `VERSION`, `CHANGELOG.md`, `docs/release-checklist.md`, `docs/00-project-memory/current-state.md`, `docs/00-project-memory/task-ledger.md`, `docs/07-decisions/change-log.md`, `scripts/check-public-safety.sh`, `scripts/sync-local-skill.sh`
+- Selected execution skills: `pmm`, `superpowers:finishing-a-development-branch`, `superpowers:verification-before-completion`.
+- Current checkpoint: version files, public changelog, README links, release checklist rules, safety-check version validation, and local sync coverage have been added in the working tree.
+- Next concrete action: run verification, commit, tag `v0.1.0`, publish a GitHub Release, push, sync local skill, and close this ledger entry.
+- Retry count: 0
+- Last error or interruption: initial patch failed because README heading text did not match the expected patch context; corrected by applying patches against the actual file content.
+- Verification status: pending.
+
 ## 2026-05-15 Usage-Driven Skill Improvements
 
 - Status: completed

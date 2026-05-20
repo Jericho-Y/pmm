@@ -72,6 +72,8 @@ if find . -type l -not -path './.git/*' | rg .; then
 fi
 
 [[ -f SKILL.md ]] || fail "SKILL.md missing after clone"
+[[ -f VERSION ]] || fail "VERSION missing after clone"
+[[ -f CHANGELOG.md ]] || fail "CHANGELOG.md missing after clone"
 [[ -d templates ]] || fail "templates directory missing after clone"
 [[ -f docs/agent-compatibility.md ]] || fail "agent compatibility guide missing after clone"
 [[ -f docs/context-budget.md ]] || fail "context budget guide missing after clone"
@@ -101,6 +103,8 @@ mkdir -p "$LOCAL_SKILL_DIR"
 rsync -a --delete \
   --delete-excluded \
   --include='SKILL.md' \
+  --include='VERSION' \
+  --include='CHANGELOG.md' \
   --include='templates/' \
   --include='templates/***' \
   --include='docs/' \
@@ -114,6 +118,8 @@ rsync -a --delete \
   "$WORKDIR/" "$LOCAL_SKILL_DIR/"
 
 [[ -f "$LOCAL_SKILL_DIR/SKILL.md" ]] || fail "local sync did not produce SKILL.md"
+[[ -f "$LOCAL_SKILL_DIR/VERSION" ]] || fail "local sync did not produce VERSION"
+[[ -f "$LOCAL_SKILL_DIR/CHANGELOG.md" ]] || fail "local sync did not produce CHANGELOG.md"
 [[ -f "$LOCAL_SKILL_DIR/templates/document-skeletons.md" ]] || fail "local sync did not produce document skeleton template"
 [[ -f "$LOCAL_SKILL_DIR/docs/agent-compatibility.md" ]] || fail "local sync did not produce agent compatibility guide"
 [[ -f "$LOCAL_SKILL_DIR/docs/context-budget.md" ]] || fail "local sync did not produce context budget guide"

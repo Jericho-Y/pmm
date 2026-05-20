@@ -2,6 +2,8 @@
 
 Language: [简体中文](README.md) | English
 
+Current version: `v0.1.0`. See [CHANGELOG.md](CHANGELOG.md).
+
 Purpose: Public overview, installation guide, safety model, and repository map for the skill.
 Read when: Evaluating, installing, publishing, or onboarding to this skill repository.
 Skip when: You already know the repository shape and need a specific implementation file.
@@ -30,6 +32,8 @@ It is designed for commercial-grade apps, websites, mini programs, SaaS products
 ```text
 .
   SKILL.md
+  VERSION
+  CHANGELOG.md
   README.md
   README.en.md
   templates/
@@ -62,6 +66,8 @@ Copy this repository into your local skills directory, or copy the core skill fi
 ```text
 <SKILLS_ROOT>/pmm/
   SKILL.md
+  VERSION
+  CHANGELOG.md
   templates/
   docs/
     agent-compatibility.md
