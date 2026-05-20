@@ -40,6 +40,17 @@ Skip when: Performing a read-only lookup that will not change state.
 - Last error or interruption: initial patch failed because README heading text did not match the expected patch context; corrected by applying patches against the actual file content.
 - Verification status: passed public safety check, shell syntax check, version consistency checks, `git diff --check`, push to public `main`, tag push, GitHub Release verification, local skill sync, and installed-version check.
 
+## 2026-05-20 License Visibility Check
+
+- Status: completed
+- Objective: confirm and clarify the open source license setup for public users.
+- Selected docs: `LICENSE`, `README.md`, `README.en.md`, `docs/release-checklist.md`, `scripts/check-public-safety.sh`, `docs/00-project-memory/current-state.md`, `docs/07-decisions/change-log.md`
+- Current checkpoint: repository already uses MIT License and GitHub detects it; README files now link to `LICENSE`; release checklist and public safety checks require license visibility.
+- Next concrete action: keep MIT unless maintainer explicitly chooses a different license family.
+- Retry count: 0
+- Last error or interruption: none.
+- Verification status: passed public safety check, README license-link check, and GitHub license detection check; pending commit and push.
+
 ## 2026-05-15 Usage-Driven Skill Improvements
 
 - Status: completed

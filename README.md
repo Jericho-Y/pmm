@@ -148,6 +148,6 @@ bash scripts/check-public-safety.sh
 
 GitHub Actions 不应直接访问本机。使用本地 scheduler 或 Agent automation 检查 PR、只合并安全变更，并在 `main` 检查通过后运行 `scripts/sync-local-skill.sh`。
 
-## License
+## 开源协议
 
-MIT
+本项目使用 [MIT License](LICENSE)。简单说，别人可以免费使用、修改、分发、商用和再授权，但需要保留版权和许可证声明；本项目不提供担保。

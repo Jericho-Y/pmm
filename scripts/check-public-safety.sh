@@ -23,6 +23,7 @@ fi
 required_files=(
   "VERSION"
   "CHANGELOG.md"
+  "LICENSE"
   "SKILL.md"
   "README.md"
   "README.en.md"
@@ -39,8 +40,10 @@ done
 readme_checks=(
   "README.md:README.en.md"
   "README.md:CHANGELOG.md"
+  "README.md:LICENSE"
   "README.en.md:README.md"
   "README.en.md:CHANGELOG.md"
+  "README.en.md:LICENSE"
   "README.md:docs/context-budget.md"
   "README.en.md:docs/context-budget.md"
   "SKILL.md:docs/context-budget.md"

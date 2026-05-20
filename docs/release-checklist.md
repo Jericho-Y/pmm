@@ -12,6 +12,7 @@ Use this before publishing changes to this repository.
 - Confirm no private paths, domains, server aliases, credential references, or personal identifiers are present.
 - Confirm examples use placeholders or `example.com`.
 - Confirm no real `.env`, token, key, certificate, or memory export is present.
+- Confirm `LICENSE` is present, GitHub detects the intended license, and README files link to it.
 
 ## Repository
 
@@ -27,6 +28,12 @@ Use this before publishing changes to this repository.
 - Add a public entry to `CHANGELOG.md` describing user-visible additions, changes, fixes, and security notes.
 - Create and push a matching git tag, for example `v0.1.0`.
 - Publish a GitHub Release from the matching tag when the version is intended as a formal public release.
+
+## License
+
+- Keep the repository license in the root `LICENSE` file.
+- Keep README license sections short and link to `LICENSE`.
+- Do not change the license family without maintainer confirmation, because it affects downstream reuse rights.
 
 ## Automation
 

@@ -151,4 +151,4 @@ GitHub Actions should not directly access your local machine. Use a local schedu
 
 ## License
 
-MIT
+This project is licensed under the [MIT License](LICENSE). In short, others may use, modify, distribute, sublicense, and use it commercially, as long as they keep the copyright and license notice; the project is provided without warranty.

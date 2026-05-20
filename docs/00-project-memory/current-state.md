@@ -16,6 +16,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 
 - Public safety checks are enforced through `scripts/check-public-safety.sh`.
 - Public releases use `VERSION`, `SKILL.md` frontmatter `version:`, public `CHANGELOG.md`, matching git tags, and GitHub Releases.
+- The repository uses the root `LICENSE` file for MIT licensing, and README files link to it for public users.
 - The skill's public call name is `pmm`, displayed as `Project Memory Manager`.
 - Public repository examples use the repository slug `pmm` with an owner placeholder.
 - `README.md` is the default Simplified Chinese repository overview; `README.en.md` is the English mirror and both files link to each other for language switching.
@@ -32,6 +33,7 @@ Maintain a safe public version of the `pmm` skill and keep local installations s
 - Context and token reduction rules are documented in `docs/context-budget.md`; `SKILL.md` stays under a 500-line safety budget and links to that guide for detail.
 - Public safety checks reject symlinks, committed `.env` files, blocked secret/key/archive/binary file types, and unexpected executable files outside reviewed scripts.
 - Public safety checks verify required bilingual README links, the context-budget guide reference, and version consistency across `VERSION`, `SKILL.md`, and `CHANGELOG.md`.
+- Public safety checks require the root `LICENSE` file and README license links.
 - Local skill sync validates broad path mistakes, rejects symlink sync paths, and requires the destination to be a dedicated `pmm` skill directory.
 - Local skill sync includes `docs/context-budget.md` so installed skills keep the token-reduction protocol.
 - Local skill sync removes unmanaged files inside the dedicated local `pmm` skill directory so stale local files do not survive a sync.
